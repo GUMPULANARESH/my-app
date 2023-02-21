@@ -1,0 +1,70 @@
+<p>carttask works!</p>
+<input type="text" placeholder="search name here" [(ngModel)]="term" (keypress)="search()">
+<br>
+<input type="text" placeholder="search company here" [(ngModel)]="term1" (keypress)="search1()">
+<br>
+<button (click)="isplaced()">only placed students</button>
+<br>
+<button (click)="isnotplaced()">not placed students</button>
+<br>
+<button (click)="lowtohigh()">low to high</button>
+<br>
+<button (click)="hightolow()">high to low</button>
+<br>
+<button (click)="total()">totalpackages</button>
+<button (click)="totalstu()">totalstudents</button>
+<button (click)="addbonus()">add bonus</button>
+<button (click)="minus()">reducepackage</button>
+<br>
+<br>
+<label for="">name</label>
+<input type="text" placeholder="Enter name here" [(ngModel)]="name">
+<br>
+<label for="">DOB</label>
+<input type="date" name="" id="" [(ngModel)]="DOB">
+<br>
+<label for="">education</label>
+<input type="text" placeholder="Enter education here" name="" id="" [(ngModel)]="education">
+<br>
+
+<label for="">isPlaced</label>
+<input type="radio" name="same" id="" [(ngModel)]="isPlaced" value="true">
+<label for="">yes</label>
+<input type="radio" name="same" id="" [(ngModel)]="isPlaced" value="false">
+<label for="">no</label>
+<br>
+<label for="">company</label>
+<input type="text" placeholder="enter company name" name="" id="" [(ngModel)]="company">
+<br>
+<label for="">package</label>
+<input type="number" name="" id="" [(ngModel)]="package">
+<br>
+<button (click)="addcart()">add to cart students </button>
+
+
+<table class="table table-dark table bordered table">
+    <thead>
+        <tr>
+            <th>sl.no</th>
+        <th>name</th>
+        <th>DOB</th>
+        <th>eduction</th>
+        <th>isPlaced</th>
+        <th>company</th>
+        <th>package</th>
+        <th>actions</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.DOB | date}}</td>
+        <td>{{student.education}}</td>
+        <td>{{student.isPlaced}}</td>
+        <td>{{student.company}}</td>
+        <td>{{student.package}}</td>
+        <td><button class="btn btn-danger" (click)="delete(i)">Delete</button></td>
+    </tr>
+    </tbody>
+</table>

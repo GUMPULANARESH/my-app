@@ -1,0 +1,27 @@
+<label for="">search</label>
+<input type="text" [(ngModel)]="search">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>position</th>
+                <th>office</th>
+                <th>age</th>
+                <th>Startdate</th>
+                <th>salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td>{{employee.name}}</td>
+                <td>{{employee.position}}</td>
+                <td>{{employee.office}}</td>
+                <td>{{employee.age}}</td>
+                <td>{{employee.Startdate}}</td>
+                <td>{{employee.salary}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+

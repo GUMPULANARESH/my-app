@@ -1,0 +1,32 @@
+.parent{
+    background-color: red;
+    width: 100vw;
+    height:100vh;
+    display: flex;
+}
+.child1{
+    background-color: green;
+    width:30%;
+    height: 100%;
+    text-align: center;
+    overflow: auto;
+}
+.child2{
+    background-color: yellow;
+    width: 70%;
+    height: 100%;
+    overflow: auto;
+}
+.child1 h1{
+    padding: 21px;
+}
+.child1 h1:hover{
+    background-color: wheat;
+}
+
+
+
+.child1 button:hover{
+    color: blueviolet;
+    background-color: aqua;
+}

@@ -1,0 +1,10 @@
+.hi{
+    width:100%;
+    height: 100%;
+    background-color: wheat;
+    padding: 35px;
+    text-align: center;
+}
+.hi button{
+    margin: 10px;
+}

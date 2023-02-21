@@ -1,0 +1,120 @@
+<p>create-user works!</p>
+
+<h1>create user form</h1>
+<!-- FormGroup -->
+<form [formGroup]="userForm">
+    <label>name:</label>
+    <input type="text" formControlName="name">
+    <br>
+    <div class="text-danger" *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid">
+        <p *ngIf="userForm.get('name')?.errors?.['required']">Name is required</p>
+        <p *ngIf="userForm.get('name')?.errors?.['minlength']">Name should be in 3 chars</p>
+        <p *ngIf="userForm.get('name')?.errors?.['maxlength']">Name should be max 10 chars</p>
+    </div >
+
+
+
+
+
+    <label>age:</label>
+    <input type="number" formControlName="age">
+    <br>
+
+    <div class="text-danger" *ngIf="userForm.get('age')?.touched && userForm.get('age')?.invalid">
+        <p *ngIf="userForm.get('age')?.errors?.['required']">Age is required</p>
+        <p *ngIf="userForm.get('age')?.errors?.['min']">min 0 years</p>
+        <p *ngIf="userForm.get('age')?.errors?.['max']"> max 100 years</p>
+    </div>
+
+    <label>phone:</label> 
+    <input type="number" formControlName="phone">
+    <br>
+
+    
+
+    <label>email:</label> 
+    <input type="text" formControlName="email">
+    <br>
+
+    <div class="text-danger" *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid">
+        <p *ngIf="userForm.get('email')?.errors?.['required']">email is required</p>
+        <p *ngIf="userForm.get('email')?.errors?.['email']">invalid email format</p>
+    </div>
+
+<!-- Nested FormGroup implementation -->
+
+    <div formGroupName="address">
+        <label >state:</label>
+        <input type="text" formControlName="state">
+        <br>
+
+        <div class="text-danger" *ngIf="userForm.get('address')?.get('state')?.touched && userForm.get('address')?.get('state')invalid">
+            <p *ngIf="userForm.get('address')?.get('state')?.errors?.['required']">state is required</p>
+        </div>
+
+        <label >pin:</label>
+        <input type="number" formControlName="pin">
+        <br>
+
+        <div class="text-danger" *ngIf="userForm.get('address')?.get('pin')?.touched && userForm.get('address')?.get('pin')?.invalid">
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['required']"> is required</p>
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['min']">min 100000 numbers</p>
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['max']"> max 999999 numbers</p>
+        </div>
+    </div>
+
+     <!-- Form Array implementation -->
+    <button (click)="add()">Add Card</button>
+    <!-- <button (click)="submit()">submit</button> -->
+
+   
+<div formArrayName="cards">
+    <div *ngFor="let card of cardsFormArray.controls;let i=index">
+        <div formGroupName="{{i}}">
+
+            <label>number:</label>
+            <input type="number" formControlName="number">
+            <br>
+            <div class="text-danger" *ngIf="cardsFormArray.controls[i]?.get('number')?.touched && cardsFormArray.controls[i]?.get('number')?.invalid" >
+                <p *ngIf="cardsFormArray.controls[i]?.get('number')?.errors?.['required']">card number is required</p>
+   
+               </div>
+    
+
+            <label>expiry:</label>
+            <input type="month" formControlName="expiry">
+            <br>
+            <label>cvv:</label>
+            <input type="number" formControlName="cvv">
+            <br>
+            <button class="btn btn-danger" (click)="delete(i)">delete</button>
+
+
+        </div>
+    </div>
+</div>
+<hr>
+<!-- Dynamic forms -->
+<label >type:</label>
+
+<label for="">DayScholar</label>
+<input type="radio" name="type" formControlName="type" value="DayScholar">
+
+<label for="">Residential</label>
+<input type="radio" name="type" formControlName="type" value="Residential">
+
+<br>
+<div *ngIf="userForm.get('type')?.value == 'DayScholar'">
+<label for="">BusFee:</label>
+<input type="number" formControlName="BusFee">
+<br>
+</div >
+<div *ngIf="userForm.get('type')?.value == 'Residential'" >
+<label >HostelFee:</label>
+<input type="number" formControlName="HostelFee">
+<br>
+</div>
+
+    <button [disabled]="userForm.invalid" class="btn btn-success" (click)="submit()">submit</button>
+
+</form>

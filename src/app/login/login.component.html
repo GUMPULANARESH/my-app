@@ -1,0 +1,13 @@
+  <!-- <button routerLink="/dashboard">submit</button> -->
+<div class="parent">
+    <form [formGroup]="loginForm">
+
+        <label >email:</label>
+        <input type="text" formControlName="email">
+        <br>
+        <label >password:</label>
+        <input type="text" formControlName="password">
+        <br>
+        <button (click)="submit()">submit</button>
+    </form>
+</div>

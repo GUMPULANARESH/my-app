@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { Router, RouterModule, Routes } from '@angular/router';
+import { AboutCeoComponent } from './aboutus/about-ceo/about-ceo.component';
 import { AttributeDirectivesComponent } from './attribute-directives/attribute-directives.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { BankComponent } from './bank/bank.component';
@@ -60,7 +61,8 @@ const routes: Routes = [
     {path:'parent',component:ParentComponent},
     {path:'items',component:ItemsComponent},
     {path:'nav',component:NavComponent},
-    {path:'cartlist',component:CartlistComponent}
+    {path:'cartlist',component:CartlistComponent},
+    {path:'about-ceo',component:AboutCeoComponent}
 
   ]},
   {path:'',component:DashboardComponent},

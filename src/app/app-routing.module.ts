@@ -1,5 +1,5 @@
 import { Component, NgModule } from '@angular/core';
-import { Router, RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, Router, RouterModule, Routes } from '@angular/router';
 import { AboutCeoComponent } from './aboutus/about-ceo/about-ceo.component';
 import { AttributeDirectivesComponent } from './attribute-directives/attribute-directives.component';
 import { AuthenticationGuard } from './authentication.guard';
@@ -62,7 +62,12 @@ const routes: Routes = [
     {path:'items',component:ItemsComponent},
     {path:'nav',component:NavComponent},
     {path:'cartlist',component:CartlistComponent},
-    {path:'about-ceo',component:AboutCeoComponent}
+    {path:'about-ceo',component:AboutCeoComponent},
+    
+    {
+      path: 'contactus',
+    loadChildren: () => import('./contactus/contactus.module').then(m => m.ContactusModule)
+    }
 
   ]},
   {path:'',component:DashboardComponent},
@@ -70,7 +75,7 @@ const routes: Routes = [
 ];
   
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{preloadingStrategy:PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -2,6 +2,17 @@
 <h1>my age is{{number}}</h1>
 <h1>is from india{{isIndian}}</h1>
 <button (click)="submit()">submit</button>
+
+<button (dblclick)="test()">cancel</button>
+<button (mouseenter)="enter()" (mouseleave)="leave()">welcome</button>
+
 <input type="text" (keypress)="filter()">
+
+<input type="number" [(ngModel)]="mobile">
+<h1>{{mobile}}</h1>
+
 <button (mouseenter)="cancel()">cancel</button>
+
 <input type="number" [(ngModel)]="phone">
+
+

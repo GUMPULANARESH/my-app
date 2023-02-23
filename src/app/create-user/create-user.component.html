@@ -48,7 +48,7 @@
         <input type="text" formControlName="state">
         <br>
 
-        <div class="text-danger" *ngIf="userForm.get('address')?.get('state')?.touched && userForm.get('address')?.get('state')invalid">
+        <div class="text-danger" *ngIf="userForm.get('address')?.get('state')?.touched && userForm.get('address')?.get('state')?.invalid">
             <p *ngIf="userForm.get('address')?.get('state')?.errors?.['required']">state is required</p>
         </div>
 
@@ -75,7 +75,7 @@
             <label>number:</label>
             <input type="number" formControlName="number">
             <br>
-            <div class="text-danger" *ngIf="cardsFormArray.controls[i]?.get('number')?.touched && cardsFormArray.controls[i]?.get('number')?.invalid" >
+            <div class="text-danger" *ngIf="cardsFormArray.controls[i]?.get('number')?.touched && cardsFormArray.controls[i]?.get('number')?.invalid"  >
                 <p *ngIf="cardsFormArray.controls[i]?.get('number')?.errors?.['required']">card number is required</p>
    
                </div>

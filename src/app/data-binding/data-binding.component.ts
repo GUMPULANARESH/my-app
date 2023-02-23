@@ -10,9 +10,22 @@ export class DataBindingComponent {
   public number:number=20;
   public isIndian:boolean=false;
 
+  public mobile:number=91;
+
   submit(){
     alert("submit clicked")
   }
+  test(){
+    alert("double clicked")
+  }
+enter(){
+  alert("mouse entered");
+}
+
+leave(){
+  alert("mouse leaved");
+}
+
   filter(){
     alert("key pressed in input");
   }

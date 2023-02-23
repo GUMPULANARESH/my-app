@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Vehicle } from '../vehicle';
 import { VehicleService } from '../vehicle.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { VehicleService } from '../vehicle.service';
 })
 export class VehicleComponent {
 
-  public vehicles:any=[];
+  // public vehicles:any=[];
+  public vehicles:Vehicle[]=[];
   public term:string="";
 
   public column:string="";
@@ -20,7 +22,10 @@ export class VehicleComponent {
 
   constructor(private _vehicleService:VehicleService,private _router:Router){
     _vehicleService.getVehicles().subscribe(
-      (data:any)=>{
+      // (data:any)=>{
+      //   this.vehicles=data;
+      // },
+      (data:Vehicle[])=>{
         this.vehicles=data;
       },
       (err:any)=>{

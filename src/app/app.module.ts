@@ -36,6 +36,8 @@ import { ItemsComponent } from './items/items.component';
 import { NavComponent } from './nav/nav.component';
 import { CartlistComponent } from './cartlist/cartlist.component';
 import { AboutusModule } from './aboutus/aboutus.module';
+import { PricePipe } from './price.pipe';
+import { SalaryPipe } from './salary.pipe';
 
 @NgModule({
   declarations: [
@@ -70,6 +72,8 @@ import { AboutusModule } from './aboutus/aboutus.module';
     ItemsComponent,
     NavComponent,
     CartlistComponent,
+    PricePipe,
+    SalaryPipe,
 
   ],
   imports: [

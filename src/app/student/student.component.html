@@ -62,7 +62,7 @@
             <td>{{student.address}}</td>
             <td>{{student.photo}}</td>
             <td>{{student.placedIn}}</td>
-            <td>{{student.salary}}</td>
+            <td>{{student.salary | salary}}</td>
             <td>{{student.id}}</td>
             <td>
                 <button class="btn btn-danger" (click)="delete(student.id)">delete</button>

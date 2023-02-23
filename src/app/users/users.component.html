@@ -1,0 +1,21 @@
+<p>users works!</p>
+
+<h1>users table</h1>
+<table  class="btn btn-dark">
+    <thead>
+       <tr>
+          <th>Name</th>
+           <th>phone</th>
+           <th>salary</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.salary}}</td>
+        </tr>
+
+
+    </tbody>
+</table>

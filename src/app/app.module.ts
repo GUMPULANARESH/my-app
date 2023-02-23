@@ -39,6 +39,7 @@ import { AboutusModule } from './aboutus/aboutus.module';
 import { PricePipe } from './price.pipe';
 import { SalaryPipe } from './salary.pipe';
 import { ImpDirective } from './imp.directive';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { ImpDirective } from './imp.directive';
     PricePipe,
     SalaryPipe,
     ImpDirective,
+    UsersComponent,
 
   ],
   imports: [

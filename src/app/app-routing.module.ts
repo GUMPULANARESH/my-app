@@ -29,6 +29,7 @@ import { ProductsComponent } from './products/products.component';
 import { RectangleComponent } from './rectangle/rectangle.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { StudentComponent } from './student/student.component';
+import { UsersComponent } from './users/users.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 
@@ -67,7 +68,8 @@ const routes: Routes = [
     {
       path: 'contactus',
     loadChildren: () => import('./contactus/contactus.module').then(m => m.ContactusModule)
-    }
+    },
+    {path:'users',component:UsersComponent},
 
   ]},
   {path:'',component:DashboardComponent},

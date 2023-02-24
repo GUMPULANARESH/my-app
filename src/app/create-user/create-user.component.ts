@@ -1,6 +1,6 @@
 import { group } from '@angular/animations';
 import { Component } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-user',
@@ -15,7 +15,8 @@ export class CreateUserComponent {
       name: new FormControl("",[Validators.required,Validators.minLength(3),Validators.maxLength(10)]),
       age: new FormControl("",[Validators.required,Validators.min(0),Validators.max(100)]),
       phone: new FormControl(),
-      email: new FormControl("",[Validators.required,Validators.email]),
+      // <!-- custom validator step-3 -->
+      email: new FormControl("",[Validators.required,Validators.email,emailDomain]),
 
       // Nested Form group
       address: new FormGroup(
@@ -63,4 +64,16 @@ add(){
   }
 
 }
+// custom validator step-1 press ctrl on email create
+// <!-- custom validator step-2-->
+// static email(control: AbstractControl): ValidationErrors | null;
+function emailDomain(control: AbstractControl): ValidationErrors | null{
+  if(control.value.indexOf("@capgemini.com") == -1){
+    return {"emailDomain":true};
+  }
+  else{
+    return null
+  }
+}
+
   

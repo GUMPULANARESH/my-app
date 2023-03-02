@@ -10,7 +10,7 @@ export class ItemsComponent {
   constructor(private _commonService:CommonService){}
 
   add(){
-    this._commonService.setValue();
+    this._commonService.setValue(); 
   }
 
 }

@@ -3,10 +3,10 @@
     <form [formGroup]="loginForm">
 
         <label >email:</label>
-        <input type="text" formControlName="email">
+        <input type="email" placeholder="eve.holt@reqres.in" formControlName="email">
         <br>
         <label >password:</label>
-        <input type="text" formControlName="password">
+        <input type="text" placeholder="cityslicka" formControlName="password">
         <br>
         <button (click)="submit()">submit</button>
     </form>

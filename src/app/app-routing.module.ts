@@ -18,6 +18,7 @@ import { DirectivestaskComponent } from './directivestask/directivestask.compone
 import { DirectivestasktwoComponent } from './directivestasktwo/directivestasktwo.component';
 import { GradeComponent } from './grade/grade.component';
 import { HomeComponent } from './home/home.component';
+import { HooksComponent } from './hooks/hooks.component';
 import { ItemsComponent } from './items/items.component';
 import { LoginComponent } from './login/login.component';
 import { NavComponent } from './nav/nav.component';
@@ -65,6 +66,7 @@ const routes: Routes = [
     {path:'nav',component:NavComponent},
     {path:'cartlist',component:CartlistComponent},
     {path:'about-ceo',component:AboutCeoComponent},
+    {path:'hooks',component:HooksComponent},
     
     {
       path: 'contactus',

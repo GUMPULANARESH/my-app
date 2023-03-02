@@ -19,6 +19,8 @@
 }
 .child1 h1{
     padding: 21px;
+    background-color: blueviolet;
+    color: white;
 }
 .child1 h1:hover{
     background-color: wheat;

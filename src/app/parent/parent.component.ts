@@ -11,7 +11,7 @@ export class ParentComponent {
 
   catch(value:any){
     // alert(value);
-    this.bp=value;
+    this.bp=value;   
   }
 
 
